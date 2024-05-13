@@ -1,6 +1,11 @@
+
+
 package com.example.appempresa
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,34 +18,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.appempresa.ui.theme.AppEmpresaTheme
 
 class MainActivity : ComponentActivity() {
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            AppEmpresaTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.login)
+        val buttonRegister = findViewById<Button>(R.id.button3)
+        buttonRegister.setOnClickListener {
+        val intent = Intent(this@MainActivity, RegisterActivity::class.java)
+            startActivities(arrayOf(intent))
+
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AppEmpresaTheme {
-        Greeting("Android")
     }
 }
