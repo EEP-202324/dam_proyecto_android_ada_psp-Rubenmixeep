@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">AppEmpresa</string>
-    <string name="title_activity_main2">MainActivity2</string>
-    <string name="title_activity_login">login</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_tarea">TareaActivity</string>
-</resources>
